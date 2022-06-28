@@ -1,0 +1,29 @@
+client.on('guildMemberAdd', member => {
+    
+    let wlcchannel = client.channels.cache.get("ID")
+    if(wlcchannel){
+       
+        let WLCEmbed= new MessageEmbed
+        if(member.user.bot){
+
+          WLCEmbed.setColor("#8500ff") //Color
+          WLCEmbed.setDescription(`WLC <@${member.user.id}>`) //Description
+          WLCEmbed.setThumbnail("URL") //Thumbnail
+          WLCEmbed.setFooter(`iTz CLub`, client.user.displayAvatarURL()) //Footer
+          WLCEmbed.setTimestamp()
+          wlcchannel.send(WLCEmbed) 
+
+        }else{
+
+          WLCEmbed.setColor("#8500ff") //Color
+          WLCEmbed.setDescription(`WLC <@${member.user.id}>`) //Description
+          WLCEmbed.setThumbnail("URL") //Thumbnail
+          WLCEmbed.setFooter(`iTz CLub`, client.user.displayAvatarURL()) //Footer
+          WLCEmbed.setTimestamp()
+          wlcchannel.send(WLCEmbed)
+
+        }
+    }else{
+      console.log("There is No WLC Channel")
+    }
+  })
